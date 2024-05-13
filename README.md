@@ -20,5 +20,3 @@ ArtFusion is an innovative platform designed for art enthusiasts, collectors, an
 
 To get started with ArtFusion, simply clone this repository to your local machine:
 
-
-git clone https://github.com/your-username/artfusion.git
