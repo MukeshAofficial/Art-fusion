@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Nearby Museums</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative; /* Add position relative for the button */
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: left;
+    }
+
+    #container {
+      display: flex;
+      height: calc(100vh - 50px); /* Adjusted height to accommodate header */
+    }
+
+    #sidebar {
+      flex: 1;
+      padding: 20px;
+      background-color: #f0f0f0;
+      overflow-y: auto;
+    }
+
+    #map-container {
+      flex: 2;
+      background: #f5f5f5;
+      height: 100%;
+    }
+
+    #find-museums {
+      position: absolute;
+      top: 10px; /* Adjusted top position to accommodate header */
+      right: 20px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 999; /* Ensure the button is on top of other elements */
+    }
+
+    .museum-container {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .museum-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .museum-address {
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Nearby Museums</h1>
+  </header>
+
+  <button id="find-museums">Find Museums</button>
+
+  <div id="container">
+    <div id="sidebar">
+      <h2>Museums Nearby</h2>
+      <div id="museums-list">
+        <!-- Museum items will be added here dynamically -->
+      </div>
+    </div>
+    <div id="map-container"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+ var map = L.map('map-container').setView([13.0827, 80.2707], 13);
+var museumGroup = L.layerGroup().addTo(map);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+function updateMuseums(data) {
+  var museumsList = $('#museums-list');
+  museumsList.empty(); // Clear previous data
+  museumGroup.clearLayers(); // Clear existing markers
+
+  data.forEach(function(museum) {
+    var container = $('<div>').addClass('museum-container');
+    var name = $('<div>').addClass('museum-name').text(museum.name);
+    var address = $('<div>').addClass('museum-address').text(museum.address);
+    container.append(name, address);
+    museumsList.append(container);
+
+    var marker = L.marker([museum.lat, museum.lon]).addTo(museumGroup);
+    marker.bindPopup('<h3>' + museum.name + '</h3><p>' + museum.address + '</p>');
+  });
+
+  map.fitBounds(museumGroup.getBounds());
+}
+
+$('#find-museums').on('click', function() {
+  $.ajax({
+    url: '/museums',
+    success: function(data) {
+      updateMuseums(data);
+    },
+    error: function(xhr, status, error) {
+      console.error('Failed to fetch museums:', error);
+    }
+  });
+});
+
+// Call the /museums endpoint to fetch and display museums on page load
+$(document).ready(function() {
+  // Not making an initial request here, markers will only appear when the button is clicked
+});
+
+  </script>
+</body>
+
+</html>

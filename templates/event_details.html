@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+</head>
+<body>
+    <h1>Event Details</h1>
+    <p><strong>Title:</strong> {{ event_details.title }}</p>
+    <p><strong>Description:</strong> {{ event_details.description }}</p>
+    <p><strong>Start Date:</strong> {{ event_details.start_date }}</p>
+    <p><strong>End Date:</strong> {{ event_details.end_date }}</p>
+    <p><strong>Location:</strong> {{ event_details.location }}</p>
+    <p><strong>URL:</strong> <a href="{{ event_details.url }}" target="_blank">{{ event_details.url }}</a></p>
+</body>
+</html>

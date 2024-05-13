@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdfunding Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .funding {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .funding img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+        .funding p {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Art Crowdfunding Details</h1>
+        <div class="funding" id="funding1" onclick="openCrowdfundingDApp()">
+            <img src="{{ url_for('static', filename='crowdd.jpg') }}" alt="Fund 1">
+            <p>Supporting an art exhibition</p>
+            <button>Contribute</button>
+        </div>
+        <div class="funding" id="funding2" onclick="openCroxwdfundingDApp()">
+            <img src="{{ url_for('static', filename='crowdd4.jpg') }}" alt="Fund 2">
+            <p>Funding for an independent film project</p>
+            <button>Contribute</button>
+        </div>
+        <div class="funding" id="funding3" onclick="openCrowdfundingDApp()">
+            <img src="{{ url_for('static', filename='crowdd1.jpg') }}" alt="Fund 3">
+            <p>Helping an artist to publish their book</p>
+            <button>Contribute</button>
+        </div>
+        <div class="funding" id="funding5" onclick="openCrowdfundingDApp()">
+            <img src="{{ url_for('static', filename='crowdd5.jpg') }}" alt="Fund 5">
+            <p>Backing an art education program for underprivileged children</p>
+            <button>Contribute</button>
+        </div>
+        <div class="funding" id="funding6" onclick="openCrowdfundingDApp()">
+            <img src="{{ url_for('static', filename='crowd3.jpg') }}" alt="Fund 6">
+            <p>Funding for an artist residency program</p>
+            <button>Contribute</button>
+        </div>
+    </div>
+    
+
+    <script>
+        function openCrowdfundingDApp() {
+            window.location.href = "/crowd_fund";
+        }
+    </script>
+</body>
+</html>

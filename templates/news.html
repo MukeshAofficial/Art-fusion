@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtFusion News Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Change background color to black */
+            color: #fff; /* Change text color to white */
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #111; /* Darker shade of black */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .news-item {
+            border-bottom: 1px solid #444; /* Darker shade of border color */
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        .news-item img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .news-item a {
+            color: #bbb; /* Lighter shade of white */
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ArtFusion News Feed</h1>
+        {% for item in news %}
+        <div class="news-item">
+            <img src="{{ item.image }}" alt="{{ item.title }}">
+            <div>
+                <p>{{ item.date }}</p>
+                <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

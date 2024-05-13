@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ArtFusion</title>
+</head>
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Icon 2" style="width: 50px; height: auto;">
+    Welcome to ArtFusion
+</header>
+
+  <nav class='navi'>
+    <a href='/meta-login' id='meta-login'>Meta-Login</a>
+    <a href='/chat'>Chatroom</a>
+    <a href='/hackathons'>Hackathons</a>
+	<a href='/market'>Marketplace</a>
+    <a href='/events'>Events</a>
+    <a href='/login' id='log'>Login</a>
+  </nav>
+  
+  <main>
+    <section class="hero">
+      <h1>"Art is the lie that enables us to realize the truth." - Pablo Picasso</h1>
+      <a href='/gallery'><button>View Gallery</button></a>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+          <a href="/create-art"><img src="{{ url_for('static', filename='ai.jpg') }}" alt="Icon 3"></a>
+          <h3>AI Art Guide</h3>
+          <p>Learn step-by-step how to create art with our AI art guide.</p>
+      </div>
+      
+      <div class="feature">
+          <a href="/fund"><img src="{{ url_for('static', filename='crowd3.jpg') }}" alt="Icon 3"></a>
+          <h3>Crowdfund Artworks</h3>
+          <p>Support artworks using cryptocurrency through our crowdfunding platform.</p>
+      </div>
+      
+      <div class="feature">
+          <a href="/news"><img src="{{ url_for('static', filename='news.jpg') }}" alt="Icon 3"></a>
+          <h3>Art News Feed</h3>
+          <p>Stay updated with the latest art news and trends in the art world.</p>
+      </div>
+      
+      <div class="feature">
+          <a href="/explain-art"><img src="{{ url_for('static', filename='upload.jpg') }}" alt="Icon 3"></a>
+          <h3>AI Art Explainer</h3>
+          <p>Upload your art and discover its history, including artist details and more, with our AI art explainer.</p>
+      </div>
+  </section>
+  
+    
+    <section class="hero">
+      <h1>Discover Art and Museums Nearby You</h1>
+      <a href="/map"><button>Explore</button></a>
+    </section>
+
+    <h1 style="text-align: center;">Blog Posts</h1>
+    
+    <div class="blog-posts" style="justify-content: center;">
+      <div class="post">
+          <img src="{{ url_for('static', filename='blog1.png') }}" alt="Post 1">
+          <h2>How This Artist's Illusionary Paintings Reflect the Realities of Our Emotions
+          </h2>
+          <p></p>
+          <a href="/blog1" class="read-more">READ MORE</a>
+      </div>
+      <div class="post">
+          <img src="{{ url_for('static', filename='blog2.jpg') }}" alt="Post 2">
+          <h2>How Artists Can Use Copyright Law to Protect Their Work and Build Their Legacy</h2>
+          <p></p>
+          <a href="blog2" class="read-more">READ MORE</a>
+      </div>
+      <div class="post">
+        <img src="{{ url_for('static', filename='blog3.jpg') }}" alt="Post 2">
+          <h2> Are Art Fairs Worth The Hype?</h2>
+          <p></p>
+          <a href="/blog3" class="read-more">READ MORE</a>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 40px;">
+      <a href="#" class="learn-more">View MORE</a>
+    </div>
+
+    <div class="faq-container">
+      <h1 class="faq-title">Frequently Asked Questions</h1>
+      <ul class="faq-list">
+        <li class="faq-item">
+          <h2 class="faq-question">What is an AI art explainer?</h2>
+          <p class="faq-answer">An AI art explainer is a tool that helps you understand the history and details of artworks using artificial intelligence.</p>
+        </li>
+        <li class="faq-item">
+          <h2 class="faq-question">What is an AI art guide?</h2>
+          <p class="faq-answer">An AI art guide is a step-by-step tutorial that uses artificial intelligence to assist you in creating art.</p>
+        </li>
+        <li class="faq-item">
+          <h2 class="faq-question">How can I buy and sell art on the marketplace?</h2>
+          <p class="faq-answer">You can buy and sell art on the marketplace by browsing through listings, making purchases, and listing your own artworks for sale.</p>
+        </li>
+        <li class="faq-item">
+          <h2 class="faq-question">How can I discover nearby museums?</h2>
+          <p class="faq-answer">You can discover nearby museums by using location-based features in the app or website, which will display museums near your current location.</p>
+        </li>
+        <li class="faq-item">
+          <h2 class="faq-question">How can I get real-time news, hackathons, and event updates?</h2>
+          <p class="faq-answer">You can get real-time updates on news, hackathons, and events by subscribing to notifications or checking the app or website regularly for updates.</p>
+        </li>
+        <li class="faq-item">
+          <h2 class="faq-question">How does crowdfunding artworks work?</h2>
+          <p class="faq-answer">Crowdfunding artworks involves raising funds from a large number of people to support the creation or exhibition of art projects.</p>
+        </li>
+        <li class="faq-item">
+          <h2 class="faq-question">How can I get help for my art-related queries in the chatroom?</h2>
+          <p class="faq-answer">You can get help for your art-related queries in the chatroom by joining discussions with other artists and enthusiasts who can provide advice and support.</p>
+        </li>
+      </ul>
+    </div>
+    
+
+    <footer class="footer">
+      <!-- Footer content goes here -->
+      <p>&copy; 2024 ArtFusion. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <style>
+    body {
+      background-color: #000;
+      color: #FFFFFF;
+    }
+
+    header {
+      background-color: #4E554D;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-family: system-ui;
+      font-size: 27px;
+    }
+
+    .navi {
+      background-color: #333;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+    }
+    #meta-login{
+      margin-right: auto; margin-left: 0 background-color: #2414FF;
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    }
+
+    .navi a {
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: system-ui;
+    }
+
+    .faq-title {
+      font-size: 2em;
+      margin-top: 0;
+    }
+
+    .faq-container {
+      width: 80%;
+      margin: 0 auto; /* Center the FAQ container */
+      text-align: center;
+      color: white; /* Changed FAQ answer color to white */
+    }
+
+    .faq-list {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .faq-item {
+      width: 25%;
+      margin: 10px;
+      padding: 20px;
+      background-color: #222;
+      border-radius: 10px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .faq-item:hover {
+      background-color: #333;
+      transform: scale(1.1);
+    }
+
+    .faq-question {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .faq-answer {
+      font-size: 1em;
+    }
+
+    .blog-posts {
+      display: flex;
+      justify-content: center; /* Center the blog posts */
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #000;
+    }
+
+    .post {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      width: 300px;
+    }
+
+    .post img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .post h2 {
+      font-size: 20px;
+      margin: 15px;
+    }
+
+    .post p {
+      margin: 0 15px 15px;
+      color: #666;
+    }
+
+    .read-more {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 15px;
+      border-radius: 5px;
+    }
+
+    .learn-more {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .navi a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #log {
+      background-color: #2414FF;
+      border-radius: 25px;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    #log:hover {
+      background-color: #140B91;
+    }
+
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0b0e;
+      color: #fff;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #0a0b0e;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links a:last-child {
+      margin-right: 0;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+      background-color: #0a0b0e;
+      padding: 100px;
+      text-align: center;
+      text-decoration: none !important;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background-color: #7c2eea;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none !important;
+    }
+
+    /* Features Section Styles */
+    .features {
+      background-color: #0a0b0e;
+      padding: 50px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .feature {
+      max-width: 300px;
+    }
+
+    .feature img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #8e8e8e;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #4E554D;
+      color: white;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+  </style>
+</body>
+</html>

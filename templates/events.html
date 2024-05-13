@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Events</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#000;
+            color:#FFFFFF;
+        }
+        .event-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .event {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .event h2 {
+            margin-top: 0;
+            color: #FFFFFF; /* White text */
+        }
+        .event p {
+            margin: 5px 0;
+            color: #CCCCCC; /* Light gray text */
+        }
+        .event a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="event-container">
+        <h1>All Events</h1>
+        {% for event in events %}
+        <div class="event">
+            <h2>{{ event.title }}</h2>
+            <p><strong>Description:</strong> {{ event.description }}</p>
+            <p><strong>Start Date:</strong> {{ event.start_date }}</p>
+            <p><strong>End Date:</strong> {{ event.end_date }}</p>
+            <p><strong>Location:</strong> {{ event.location }}</p>
+            <p><strong>URL:</strong> <a href="{{ event.url }}" target="_blank">{{ event.url }}</a></p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

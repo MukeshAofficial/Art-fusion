@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Upload Art</h1>
+    <form id="uploadForm">
+      <input type="file" id="artFile" accept="image/*" required>
+      <textarea id="description" placeholder="Enter description"></textarea>
+      <input type="number" id="price" placeholder="Enter price" required>
+      <button type="submit">Upload</button>
+    </form>
+  </div>
+  <div class="gallery" id="artGallery">
+    <!-- Artwork cards will be dynamically added here -->
+  </div>
+  <script>document.getElementById('uploadForm').addEventListener('submit', uploadArt);
+
+    function uploadArt(event) {
+      event.preventDefault();
+    
+      // Get form inputs
+      const artFile = document.getElementById('artFile').files[0];
+      const description = document.getElementById('description').value;
+      const price = document.getElementById('price').value;
+    
+      // Simulate upload (you need backend logic here)
+      const formData = new FormData();
+      formData.append('artFile', artFile);
+      formData.append('description', description);
+      formData.append('price', price);
+    
+      // Reset form fields
+      document.getElementById('uploadForm').reset();
+    
+      // Display uploaded artwork (you need backend logic here)
+      const gallery = document.getElementById('artGallery');
+      const artworkCard = document.createElement('div');
+      artworkCard.classList.add('artwork');
+      artworkCard.innerHTML = `
+        <img src="${URL.createObjectURL(artFile)}" alt="Artwork">
+        <h3>Description:</h3>
+        <p>${description}</p>
+        <h3>Price:</h3>
+        <p>${price}</p>
+        <button onclick="likeArt()">Likes</button>
+        <button onclick="commentOnArt()">Comments</button>
+      `;
+      gallery.appendChild(artworkCard);
+    }
+    
+    function likeArt() {
+      // Increment likes count and update UI (you need backend logic here)
+    }
+    
+    function commentOnArt() {
+      // Add comment functionality and update UI (you need backend logic here)
+    }
+    </script>
+    <style>body {
+      background-color: #000;
+      color: #FFFFFF;
+    }
+    
+    .container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .upload-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .upload-form input,
+    .upload-form textarea,
+    .upload-form button {
+      margin-bottom: 10px;
+      width: 100%;
+      
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .artwork {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 300px;
+    }
+    
+    .artwork img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .artwork h3 {
+      margin-top: 10px;
+    }
+    
+    .artwork p {
+      margin-top: 5px;
+    }
+    
+    .artwork button {
+      margin-top: 10px;
+      
+    }
+    
+    button{  background-color: transparent;
+      border: 2px solid #4CAF50; /* Green */
+      color: #4CAF50;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;}
+    
+    button:hover {
+      background-color: #4CAF50;
+      color: white;
+    }</style>
+</body>
+</html>

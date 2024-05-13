@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Create Result</title>
+    <style>
+        body {
+            background:#000; /* Set background gradient for the whole page */
+            height: 100vh; /* Set body height to viewport height */
+            margin: 0; /* Remove default margin */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            flex-direction: column; /* Stack items vertically */
+        }
+
+        h1 {
+            text-align: center; /* Center the heading */
+            color: white; /* Set heading color to white */
+        }
+
+        .result-container {
+            background: white; /* Set background color of the div to white */
+            color: black; /* Set text color to black */
+            width: 60%; /* Adjust width as needed */
+            padding: 20px; /* Add some padding */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+            margin-top: 20px; /* Add margin at the top */
+            overflow: hidden; /* Hide overflow */
+            text-align: center; /* Center the content horizontally */
+        }
+
+        img {
+            max-width: 100%; /* Ensure image doesn't exceed container width */
+            max-height: 200px; /* Limit image height */
+            width: auto; /* Ensure aspect ratio is maintained */
+            height: auto; /* Ensure aspect ratio is maintained */
+            display: block; /* Remove extra space below the image */
+            margin: 0 auto 20px; /* Center the image and add space below */
+        }
+
+        .image-container {
+            text-align: center; /* Center the image horizontally */
+        }
+    </style>
+</head>
+<body>
+    <h1>Art Creation steps</h1>
+    <div class="result-container">
+        <div class="image-container">
+            <img src="{{ image_path }}" alt="Uploaded Image">
+        </div>
+        <p>{{ explanation|safe }}</p>
+    </div>
+</body>
+</html>
